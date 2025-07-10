@@ -17,6 +17,8 @@ class StringCalculator {
         numbersToAdd = numbersToAdd.replace(/\n/g, ','); // Relace the new lines
 
         if (delimiter !== ',') {
+            // Escape special regex characters
+            const escapedDelimiter = delimiter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             numbersToAdd = numbersToAdd.replace(new RegExp(delimiter, 'g'), ',');
         }
 
