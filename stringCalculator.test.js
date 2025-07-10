@@ -15,7 +15,11 @@ describe('String Calculator', () => {
         test('should return number itself for single number', () => {
             expect(calculator.add('1')).toBe(1);
             expect(calculator.add('4')).toBe(4);
-          });
+        });
+
+        test('should return sum for two comma-separated numbers', () => {
+            expect(calculator.add('1,5')).toBe(6);
+        });
     });
 
 });
