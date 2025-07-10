@@ -1,0 +1,44 @@
+{
+  "name": "string-calculator-tdd",
+  "version": "1.0.0",
+  "description": "This project implements the String Calculator Kata using Test-Driven Development (TDD) approach in Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tishaJn420/string-calculator.git"
+  },
+  "author": "Tisha Jain",
+  "license": "MIT",
+  "keywords": ["nodejs", "tdd", "kata", "string-calculator"],
+  "bugs": {
+    "url": "https://github.com/tishaJn420/string-calculator/issues"
+  },
+  "homepage": "https://github.com/tishaJn420/string-calculator#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/?(*.)+(spec|test).js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  }
+}
