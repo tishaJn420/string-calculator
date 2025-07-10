@@ -45,5 +45,13 @@ describe('String Calculator', () => {
           expect(calculator.add('//|\n1|2|3')).toBe(6);
           expect(calculator.add('//*\n1*2*3*4')).toBe(10);
         });
+
+        test('should handle custom delimiter with single number', () => {
+            expect(calculator.add('//;\n5')).toBe(5);
+        });
+
+        test('should handle custom delimiter with empty numbers', () => {
+            expect(calculator.add('//;\n')).toBe(0);
+        });
     });
 });

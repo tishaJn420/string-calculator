@@ -19,9 +19,12 @@ class StringCalculator {
         if (delimiter !== ',') {
             // Escape special regex characters
             const escapedDelimiter = delimiter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            numbersToAdd = numbersToAdd.replace(new RegExp(delimiter, 'g'), ',');
+            numbersToAdd = numbersToAdd.replace(new RegExp(escapedDelimiter, 'g'), ',');
         }
 
+        if (numbersToAdd === '') {
+            return 0;
+        }
         const numArr = numbersToAdd.split(',');
         numArr.map((num) => {
             sum = sum + parseInt(num.trim(), 10)
