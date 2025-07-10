@@ -13,7 +13,6 @@ class StringCalculator {
             delimiter = numbers.substring(2, delimiterEndIndex);
             numbersToAdd = numbers.substring(delimiterEndIndex + 1);
         }
-        console.log('numbersToAdd', numbersToAdd)
         numbersToAdd = numbersToAdd.replace(/\n/g, ','); // Relace the new lines
 
         if (delimiter !== ',') {
