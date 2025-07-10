@@ -31,4 +31,11 @@ describe('String Calculator', () => {
         });
       });
 
+    describe('Step 3: Handle new lines between numbers', () => {
+        test('should handle new lines and commas as delimiters', () => {
+          expect(calculator.add('1\n2,3')).toBe(6);
+          expect(calculator.add('1\n2\n3')).toBe(6);
+          expect(calculator.add('1,2\n3,4')).toBe(10);
+        });
+    });
 });
