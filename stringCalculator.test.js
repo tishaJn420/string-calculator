@@ -42,6 +42,8 @@ describe('String Calculator', () => {
     describe('Step 4: Support different delimiters', () => {
         test('should support custom delimiter specified at beginning', () => {
           expect(calculator.add('//;\n1;2')).toBe(3);
+          expect(calculator.add('//|\n1|2|3')).toBe(6);
+          expect(calculator.add('//*\n1*2*3*4')).toBe(10);
         });
     });
 });
