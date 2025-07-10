@@ -19,7 +19,16 @@ describe('String Calculator', () => {
 
         test('should return sum for two comma-separated numbers', () => {
             expect(calculator.add('1,5')).toBe(6);
+            expect(calculator.add('2,9')).toBe(11);
+
         });
     });
+
+    describe('Step 2: Handle any amount of numbers', () => {
+        test('should handle multiple numbers separated by commas', () => {
+          expect(calculator.add('1,2,3')).toBe(6);
+          expect(calculator.add('1,2,3,4,5')).toBe(15);
+        });
+      });
 
 });
