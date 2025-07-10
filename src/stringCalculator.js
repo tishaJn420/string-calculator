@@ -4,8 +4,21 @@ class StringCalculator {
             return 0;
         }
         let sum = 0;
+        let delimiter = ','; //Default delimiter
         let numbersToAdd = numbers;
-        numbersToAdd = numbersToAdd.replace(/\n/g, ',');
+
+        //Check if the string have a custom delimiter
+        if (numbers.startsWith('//')) { 
+            const delimiterEndIndex = numbers.indexOf('\n');
+            delimiter = numbers.substring(2, delimiterEndIndex);
+            numbersToAdd = numbers.substring(delimiterEndIndex + 1);
+        }
+        console.log('numbersToAdd', numbersToAdd)
+        numbersToAdd = numbersToAdd.replace(/\n/g, ','); // Relace the new lines
+
+        if (delimiter !== ',') {
+            numbersToAdd = numbersToAdd.replace(new RegExp(delimiter, 'g'), ',');
+        }
 
         const numArr = numbersToAdd.split(',');
         numArr.map((num) => {

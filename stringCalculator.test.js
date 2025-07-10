@@ -38,4 +38,10 @@ describe('String Calculator', () => {
           expect(calculator.add('1,2\n3,4')).toBe(10);
         });
     });
+
+    describe('Step 4: Support different delimiters', () => {
+        test('should support custom delimiter specified at beginning', () => {
+          expect(calculator.add('//;\n1;2')).toBe(3);
+        });
+    });
 });
