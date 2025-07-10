@@ -26,6 +26,12 @@ class StringCalculator {
             return 0;
         }
         const numArr = numbersToAdd.split(',');
+
+        const negativeNumbers = numArr.filter(num => num < 0);
+        if (negativeNumbers.length > 0) {
+            throw new Error(`negative numbers not allowed ${negativeNumbers.join(',')}`);
+        }
+
         numArr.map((num) => {
             sum = sum + parseInt(num.trim(), 10)
         })
